@@ -2,18 +2,7 @@ const byte digit_pins[4] = {4,2,3,1};
 unsigned long time, next_flick;
 const unsigned int to_flick = 1;
 
-const byte digits[10] = {
-    154,
-    152,
-    26,
-    246,
-    162,
-    347,
-    152,
-    357,
-    12,
-    25
-};
+
 
 byte digit = 0;
 
@@ -43,6 +32,19 @@ void loop() {
 
     Serial.println(counter);
 }
+
+const byte digits[10] = {
+    250,
+    34,
+    185,
+    171,
+    99,
+    203,
+    219,
+    162,
+    251,
+    235
+};
 
 void fill(byte d, bool point = false) {
     for (byte j = 0; j < 8; j++) {
