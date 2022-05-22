@@ -57,12 +57,11 @@ void fill(byte d, bool point = false) {
 }
 
 void setDigit(byte digit, String counter){
-byte i = 0;
-byte d = 0;
-byte s = counter.indexOf(".");
+    byte i = 0;
+    byte d = 0;
+    byte s = counter.indexOf(".");
 
-switch (digit) {
-    case 0:
+    if (digit == 0) {
         digitalWrite(digit_pins[3], LOW);
         if (s == 0){
             d = counter.charAt(1)-48;
@@ -72,22 +71,20 @@ switch (digit) {
             fill(d);
         }
         digitalWrite(digit_pins[0], HIGH);
-    break;
+    } 
 
-    case 1:
+    if (digit == 1) {
         digitalWrite(digit_pins[0], LOW);
-        if (s == 1){
+        if (s == 1) {
             d = counter.charAt(2)-48;
             fill(d,true);
-        }
-        else{
+        } else {
             d = counter.charAt(1)-48;
             fill(d);
         }
         digitalWrite(digit_pins[1], HIGH);
-    break;
-
-    case 2:
+    } 
+    if (digit == 2) {
         digitalWrite(digit_pins[1], LOW);
         if (s == 2) {
             d = counter.charAt(3)-48;
@@ -97,9 +94,8 @@ switch (digit) {
             fill(d);
         }
         digitalWrite(digit_pins[2], HIGH);
-    break;
-
-    case 3:
+    } 
+    if (digit == 3) {
         if (s == 3) {
             d = counter.charAt(4)-48;
             fill(d,true);
@@ -108,8 +104,7 @@ switch (digit) {
             fill(d);
         }
         digitalWrite(digit_pins[3], HIGH);
-    break;
-    }
+    } 
 }
 
 
